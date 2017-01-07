@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace Hello
 {
@@ -6,19 +7,8 @@ namespace Hello
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Jak Ci na imię?");
-            Console.WriteLine("Napisz tutaj swoje imię: ");
-            var imie = Console.ReadLine();
-            if (imie.Length == 0)
-            {
-                Console.Error.WriteLine("\n\n\t*** Błąd: nie podano imienia!\n\n");
-                return;
-            }
-            var niewiasta = (imie.ToLower()[imie.Length - 1] == 'a');
-            if (imie == "Kuba" || imie == "Barnaba") niewiasta = false;
-            Console.WriteLine("Niech zgadnę, jesteś {0} !", (niewiasta ? "dziewczyną" : "chłopakiem"));
-            Console.WriteLine("Naciśnij Enter...");
-            Console.In.ReadLine();
+            Console.WriteLine("Formatowanie liczb:\n\t {0}, {0:c}, {0:p3}, {0:e3}, \n\t{0:f3}," +
+                              " {0:g1}, {0:n10}, {0:r}", 0.123456789);
         }
     }
 }
